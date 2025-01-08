@@ -3,34 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR Performance Dashboard</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-    <!-- Chart.js for line chart -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <title>月次パフォーマンスダッシュボード</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.7.1/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-icons@0.263.1/dist/lucide.min.js" rel="stylesheet">
     <style>
-        :root {
-            --teal: #008080;
-            --charcoal: #36454F;
-        }
-        .progress-bar {
-            background-color: #e5e7eb;
-            border-radius: 9999px;
-            overflow: hidden;
-        }
-        .progress-value {
-            background-color: var(--teal);
-            height: 100%;
-            transition: width 0.3s ease;
-        }
-        .card {
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
@@ -43,143 +24,222 @@
         </div>
 
         <!-- Overall Performance Card -->
-        <div class="card">
-            <div class="flex items-center gap-2 mb-4">
-                <i data-lucide="trophy" class="text-yellow-500"></i>
-                <h2 class="text-xl font-bold">総合達成率</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <p class="text-lg font-semibold mb-2">PPO達成率 (70%)</p>
-                    <div class="progress-bar h-4 mb-2">
-                        <div class="progress-value" style="width: 87%"></div>
-                    </div>
-                    <p class="text-2xl font-bold" style="color: var(--teal)">87%</p>
+        <div class="bg-white shadow rounded-lg mb-6">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy text-yellow-500 mr-2">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.47.98-1.02 1.24l-1 .5c-.98.49-1.45 1.6-1.45 1.6"></path>
+                        <path d="M14 14.66V17c0 .55.47.98 1.02 1.24l1 .5c.98.49 1.45 1.6 1.45 1.6"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">総合達成率</h3>
                 </div>
-                <div>
-                    <p class="text-lg font-semibold mb-2">PPG達成率 (30%)</p>
-                    <div class="progress-bar h-4 mb-2">
-                        <div class="progress-value" style="width: 92%"></div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-lg font-semibold mb-2">PPO達成率 (70%)</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-teal-600 h-4 rounded-full" style="width: 87%"></div>
+                        </div>
+                        <p class="text-2xl font-bold text-teal-600">87%</p>
                     </div>
-                    <p class="text-2xl font-bold" style="color: var(--teal)">92%</p>
+                    <div>
+                        <p class="text-lg font-semibold mb-2">PPG達成率 (30%)</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-teal-600 h-4 rounded-full" style="width: 92%"></div>
+                        </div>
+                        <p class="text-2xl font-bold text-teal-600">92%</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Products and PPG Metrics -->
-        <div class="grid md:grid-cols-2 gap-6">
+        <!-- Products Performance and PPG Metrics -->
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
             <!-- Products Performance -->
-            <div class="card">
-                <div class="flex items-center gap-2 mb-4">
-                    <i data-lucide="target" class="text-blue-500"></i>
-                    <h2 class="text-xl font-bold">製品別達成状況</h2>
-                </div>
-                <div class="space-y-4" id="products-list">
-                    <!-- Products will be inserted here via JavaScript -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-blue-500 mr-2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900">製品別達成状況</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">PRV</span>
+                                <span class="text-sm text-gray-500">配分: 35%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>85%</span>
+                                <span class="text-gray-500">目標: ¥1.0M</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">NOX</span>
+                                <span class="text-sm text-gray-500">配分: 20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>92%</span>
+                                <span class="text-gray-500">目標: ¥0.8M</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">LAG</span>
+                                <span class="text-sm text-gray-500">配分: 20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 78%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>78%</span>
+                                <span class="text-gray-500">目標: ¥0.9M</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">ZBX</span>
+                                <span class="text-sm text-gray-500">配分: 15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>95%</span>
+                                <span class="text-gray-500">目標: ¥0.6M</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">PIF+IS</span>
+                                <span class="text-sm text-gray-500">配分: 10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>88%</span>
+                                <span class="text-gray-500">目標: ¥0.4M</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- PPG Metrics -->
-            <div class="card">
-                <div class="flex items-center gap-2 mb-4">
-                    <i data-lucide="alert-circle" class="text-purple-500"></i>
-                    <h2 class="text-xl font-bold">PPG評価指標</h2>
-                </div>
-                <div class="space-y-4" id="ppg-metrics">
-                    <!-- PPG metrics will be inserted here via JavaScript -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle text-purple-500 mr-2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900">PPG評価指標</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">アクティビティパフォーマンス</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">SOT(処方可能施設率)</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">SOT(初回処方確認率)</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">説明会実施率</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Trend Chart -->
-        <div class="card">
-            <div class="flex items-center gap-2 mb-4">
-                <i data-lucide="trending-up" class="text-green-500"></i>
-                <h2 class="text-xl font-bold">月次推移</h2>
-            </div>
-            <div class="h-64">
-                <canvas id="trendChart"></canvas>
+        <div class="bg-white shadow rounded-lg">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up text-green-500 mr-2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900">月次推移</h3>
+                </div>
+                <div class="h-64">
+                    <canvas id="trendChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Product data
-        const products = [
-            { name: 'PRV', achievement: 85, weight: 35, target: 1000000 },
-            { name: 'NOX', achievement: 92, weight: 20, target: 800000 },
-            { name: 'LAG', achievement: 78, weight: 20, target: 900000 },
-            { name: 'ZBX', achievement: 95, weight: 15, target: 600000 },
-            { name: 'PIF+IS', achievement: 88, weight: 10, target: 400000 }
+        // Trend Chart Data
+        const monthlyTrend = [
+            { month: '4月', ppo: 82, ppg: 85 },
+            { month: '5月', ppo: 85, ppg: 87 },
+            { month: '6月', ppo: 83, ppg: 88 },
+            { month: '7月', ppo: 87, ppg: 90 },
+            { month: '8月', ppo: 86, ppg: 91 },
+            { month: '9月', ppo: 87, ppg: 92 }
         ];
 
-        // PPG metrics data
-        const ppgMetrics = [
-            { name: 'アクティビティパフォーマンス', value: 95 },
-            { name: 'SOT(処方可能施設率)', value: 88 },
-            { name: 'SOT(初回処方確認率)', value: 90 },
-            { name: '説明会実施率', value: 85 }
-        ];
-
-        // Render products
-        const productsList = document.getElementById('products-list');
-        products.forEach(product => {
-            const productHtml = `
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">${product.name}</span>
-                        <span class="text-sm text-gray-500">配分: ${product.weight}%</span>
-                    </div>
-                    <div class="progress-bar h-2 mb-1">
-                        <div class="progress-value" style="width: ${product.achievement}%"></div>
-                    </div>
-                    <div class="flex justify-between text-sm">
-                        <span>${product.achievement}%</span>
-                        <span class="text-gray-500">目標: ¥${(product.target/1000000).toFixed(1)}M</span>
-                    </div>
-                </div>
-            `;
-            productsList.insertAdjacentHTML('beforeend', productHtml);
-        });
-
-        // Render PPG metrics
-        const ppgMetricsList = document.getElementById('ppg-metrics');
-        ppgMetrics.forEach(metric => {
-            const metricHtml = `
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">${metric.name}</span>
-                        <span>${metric.value}%</span>
-                    </div>
-                    <div class="progress-bar h-2">
-                        <div class="progress-value" style="width: ${metric.value}%"></div>
-                    </div>
-                </div>
-            `;
-            ppgMetricsList.insertAdjacentHTML('beforeend', metricHtml);
-        });
-
-        // Initialize trend chart
+        // Create Chart
         const ctx = document.getElementById('trendChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['4月', '5月', '6月', '7月', '8月', '9月'],
+                labels: monthlyTrend.map(item => item.month),
                 datasets: [
                     {
                         label: 'PPO達成率',
-                        data: [82, 85, 83, 87, 86, 87],
-                        borderColor: '#008080',
-                        tension: 0.1
+                        data: monthlyTrend.map(item => item.ppo),
+                        borderColor: '#008080', // Teal
+                        backgroundColor: 'transparent',
+                        borderWidth: 2
                     },
                     {
                         label: 'PPG達成率',
-                        data: [85, 87, 88, 90, 91, 92],
-                        borderColor: '#36454F',
-                        tension: 0.1
+                        data: monthlyTrend.map(item => item.ppg),
+                        borderColor: '#36454F', // Charcoal
+                        backgroundColor: 'transparent',
+                        borderWidth: 2
                     }
                 ]
             },
@@ -188,8 +248,18 @@
                 maintainAspectRatio: false,
                 scales: {
                     y: {
+                        beginAtZero: false,
                         min: 60,
                         max: 100
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
                     }
                 }
             }

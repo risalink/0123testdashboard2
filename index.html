@@ -46,7 +46,7 @@
                         <p class="text-2xl font-bold text-teal-600">87%</p>
                     </div>
                     <div>
-                        <p class="text-lg font-semibold mb-2">PPG達成率 (30%)</p>
+                        <p class="text-lg font-semibold mb-2">Activity Metric達成率 (30%)</p>
                         <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
                             <div class="bg-teal-600 h-4 rounded-full" style="width: 92%"></div>
                         </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <!-- Products Performance and PPG Metrics -->
+        <!-- Products Performance and Activity Metric Metrics -->
         <div class="grid md:grid-cols-2 gap-6 mb-6">
             <!-- Products Performance -->
             <div class="bg-white shadow rounded-lg">
@@ -72,7 +72,7 @@
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">PRV</span>
+                                <span class="font-medium">Product 1</span>
                                 <span class="text-sm text-gray-500">配分: 35%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
@@ -85,7 +85,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">NOX</span>
+                                <span class="font-medium">Product 2</span>
                                 <span class="text-sm text-gray-500">配分: 20%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
@@ -98,7 +98,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">LAG</span>
+                                <span class="font-medium">Product 3</span>
                                 <span class="text-sm text-gray-500">配分: 20%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
@@ -111,7 +111,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">ZBX</span>
+                                <span class="font-medium">Product 4</span>
                                 <span class="text-sm text-gray-500">配分: 15%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
@@ -124,7 +124,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">PIF+IS</span>
+                                <span class="font-medium">Product 5</span>
                                 <span class="text-sm text-gray-500">配分: 10%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- PPG Metrics -->
+            <!-- Activity Metric Metrics -->
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <div class="flex items-center mb-4">
@@ -148,12 +148,12 @@
                             <line x1="12" y1="8" x2="12" y2="12"></line>
                             <line x1="12" y1="16" x2="12.01" y2="16"></line>
                         </svg>
-                        <h3 class="text-lg font-semibold text-gray-900">PPG評価指標</h3>
+                        <h3 class="text-lg font-semibold text-gray-900">Activity Metric評価指標</h3>
                     </div>
                     <div class="space-y-4">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">アクティビティパフォーマンス</span>
+                                <span class="font-medium">Activity Metric 1</span>
                                 <span>95%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -162,7 +162,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">SOT(処方可能施設率)</span>
+                                <span class="font-medium">Activity Metric 2</span>
                                 <span>88%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -171,7 +171,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">SOT(初回処方確認率)</span>
+                                <span class="font-medium">Activity Metric 3</span>
                                 <span>90%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -180,7 +180,7 @@
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-medium">説明会実施率</span>
+                                <span class="font-medium">Activity Metric 4</span>
                                 <span>85%</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2">
@@ -212,12 +212,12 @@
     <script>
         // Trend Chart Data
         const monthlyTrend = [
-            { month: '4月', ppo: 82, ppg: 85 },
-            { month: '5月', ppo: 85, ppg: 87 },
-            { month: '6月', ppo: 83, ppg: 88 },
-            { month: '7月', ppo: 87, ppg: 90 },
-            { month: '8月', ppo: 86, ppg: 91 },
-            { month: '9月', ppo: 87, ppg: 92 }
+            { month: '4月', ppo: 82, Activity Metric: 85 },
+            { month: '5月', ppo: 85, Activity Metric: 87 },
+            { month: '6月', ppo: 83, Activity Metric: 88 },
+            { month: '7月', ppo: 87, Activity Metric: 90 },
+            { month: '8月', ppo: 86, Activity Metric: 91 },
+            { month: '9月', ppo: 87, Activity Metric: 92 }
         ];
 
         // Create Chart
@@ -235,8 +235,8 @@
                         borderWidth: 2
                     },
                     {
-                        label: 'PPG達成率',
-                        data: monthlyTrend.map(item => item.ppg),
+                        label: 'Activity Metric達成率',
+                        data: monthlyTrend.map(item => item.Activity Metric),
                         borderColor: '#36454F', // Charcoal
                         backgroundColor: 'transparent',
                         borderWidth: 2
@@ -280,7 +280,7 @@
             <script>
                 // Comparison Chart Data
                 const comparisonData = {
-                    labels: ['PRV', 'NOX', 'LAG', 'ZBX', 'PIF+IS'],
+                    labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
                     datasets: [
                         {
                             label: 'MR',

@@ -17,190 +17,247 @@
 </head>
 <body class="bg-gray-50">
     <div class="p-6 max-w-7xl mx-auto">
-        <!-- Header -->
-        <div class="mb-8">
-            <h1 class="text-3xl font-bold text-gray-900">月次パフォーマンスダッシュボード</h1>
-            <p class="text-gray-500">九段下太郎 - 2024年9月</p>
+        <!-- Header Section -->
+        <div class="mb-8 flex justify-between items-start">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">月次パフォーマンスダッシュボード</h1>
+                <p class="text-gray-500">九段下太郎 - 2024年9月</p>
+            </div>
+            <!-- Quick Stats -->
+            <div class="flex gap-4">
+                <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                    <span class="text-sm text-gray-500">地域ランク</span>
+                    <p class="text-lg font-semibold text-teal-600">3位 / 12</p>
+                </div>
+                <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
+                    <span class="text-sm text-gray-500">前月比</span>
+                    <p class="text-lg font-semibold text-green-600">+4%</p>
+                </div>
+            </div>
         </div>
 
         <!-- Overall Performance Card -->
         <div class="bg-white shadow rounded-lg mb-6">
             <div class="px-4 py-5 sm:p-6">
-                <div class="flex items-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy text-yellow-500 mr-2">
-                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                        <path d="M4 22h16"></path>
-                        <path d="M10 14.66V17c0 .55-.47.98-1.02 1.24l-1 .5c-.98.49-1.45 1.6-1.45 1.6"></path>
-                        <path d="M14 14.66V17c0 .55.47.98 1.02 1.24l1 .5c.98.49 1.45 1.6 1.45 1.6"></path>
-                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900">総合達成率</h3>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy text-yellow-500 mr-2">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-1.02 1.24l-1 .5c-.98.49-1.45 1.6-1.45 1.6"></path>
+                            <path d="M14 14.66V17c0 .55.47.98 1.02 1.24l1 .5c.98.49 1.45 1.6 1.45 1.6"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-900">総合達成率</h3>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-teal-50 text-teal-700 text-sm font-medium px-3 py-1 rounded-full">
+                            目標まで 8%
+                        </span>
+                        <span class="bg-yellow-50 text-yellow-700 text-sm font-medium px-3 py-1 rounded-full">
+                            残り21日
+                        </span>
+                    </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <p class="text-lg font-semibold mb-2">Sales Metric達成率 (70%)</p>
+                        <div class="flex justify-between items-center mb-2">
+                            <p class="text-lg font-semibold">Sales Metric達成率</p>
+                            <span class="text-sm text-gray-500">配分: 70%</span>
+                        </div>
                         <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
                             <div class="bg-teal-600 h-4 rounded-full" style="width: 87%"></div>
                         </div>
-                        <p class="text-2xl font-bold text-teal-600">87%</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-2xl font-bold text-teal-600">87%</p>
+                            <span class="text-sm text-green-600">↑ 2% vs 先月</span>
+                        </div>
                     </div>
                     <div>
-                        <p class="text-lg font-semibold mb-2">Activity Metric達成率 (30%)</p>
+                        <div class="flex justify-between items-center mb-2">
+                            <p class="text-lg font-semibold">Activity Metric達成率</p>
+                            <span class="text-sm text-gray-500">配分: 30%</span>
+                        </div>
                         <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
                             <div class="bg-teal-600 h-4 rounded-full" style="width: 92%"></div>
                         </div>
-                        <p class="text-2xl font-bold text-teal-600">92%</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-2xl font-bold text-teal-600">92%</p>
+                            <span class="text-sm text-green-600">↑ 1% vs 先月</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Products Performance and Activity Metric Metrics -->
+        <!-- Products Performance and Activity Metrics -->
         <div class="grid md:grid-cols-2 gap-6 mb-6">
-
-            <!-- Products Performance - Modified section -->
+            <!-- Products Performance -->
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <div class="flex items-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-blue-500 mr-2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
-                        <h3 class="text-lg font-semibold text-gray-900">製品別達成状況</h3>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-blue-500 mr-2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <h3 class="text-lg font-semibold text-gray-900">製品別達成状況</h3>
+                        </div>
+                        <span class="text-sm text-gray-500">目標達成まで残り21日</span>
                     </div>
+                    
                     <div class="space-y-6">
                         <!-- Product 1 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Product 1</span>
-                                <span class="text-sm text-gray-500">配分: 35%</span>
-                            </div>
-                            <div class="space-y-2">
+                        <div class="relative p-4 rounded-lg border border-gray-100 hover:border-gray-200 transition-colors">
+                            <div class="flex justify-between items-start mb-2">
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 85%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>全体: 85%</span>
+                                    <span class="font-medium text-gray-900">Product 1</span>
+                                    <span class="ml-2 text-sm text-gray-500">配分: 35%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700">
+                                        ギャップ: 5%
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="font-medium">全体進捗</span>
                                         <span class="text-gray-500">目標: ¥1.0M</span>
                                     </div>
+                                    <div class="relative">
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-teal-600 h-2 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                        <div class="absolute top-0 left-[90%] w-px h-2 bg-gray-400"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs mt-1">
+                                        <span class="text-teal-600 font-medium">現在: 85%</span>
+                                        <span class="text-gray-500">目標: 90%</span>
+                                    </div>
                                 </div>
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-400 h-2 rounded-full" style="width: 82%"></div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <div class="flex items-center">
+                                            <span class="font-medium">Region 1</span>
+                                            <span class="ml-2 px-1.5 py-0.5 text-xs rounded bg-red-50 text-red-600">要注意</span>
+                                        </div>
                                     </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>Region 1: 82%</span>
+                                    <div class="relative">
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-teal-400 h-2 rounded-full" style="width: 82%"></div>
+                                        </div>
+                                        <div class="absolute top-0 left-[90%] w-px h-2 bg-gray-400"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs mt-1">
+                                        <span class="text-teal-600 font-medium">現在: 82%</span>
+                                        <span class="text-gray-500">目標: 90%</span>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="mt-3 text-sm text-gray-600">
+                                <span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 rounded">
+                                    必要売上: ¥150K
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Product 2 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Product 2</span>
-                                <span class="text-sm text-gray-500">配分: 20%</span>
+                        <!-- Product 3 (Example of underperforming product) -->
+                        <div class="relative p-4 rounded-lg border border-red-100 hover:border-red-200 transition-colors bg-red-50">
+                            <div class="absolute top-3 right-3">
+                                <span class="px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-700">
+                                    最優先アクション
+                                </span>
                             </div>
-                            <div class="space-y-2">
+                            <div class="flex justify-between items-start mb-2">
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 92%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>全体: 92%</span>
-                                        <span class="text-gray-500">目標: ¥0.8M</span>
-                                    </div>
+                                    <span class="font-medium text-gray-900">Product 3</span>
+                                    <span class="ml-2 text-sm text-gray-500">配分: 20%</span>
                                 </div>
-                                <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-400 h-2 rounded-full" style="width: 89%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>Region 1: 89%</span>
-                                    </div>
+                                <div class="flex items-center">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-700">
+                                        ギャップ: 12%
+                                    </span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Product 3</span>
-                                <span class="text-sm text-gray-500">配分: 20%</span>
-                            </div>
-                            <div class="space-y-2">
+                            <div class="space-y-3">
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 78%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>全体: 78%</span>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="font-medium">全体進捗</span>
                                         <span class="text-gray-500">目標: ¥0.9M</span>
                                     </div>
+                                    <div class="relative">
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-teal-600 h-2 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                        <div class="absolute top-0 left-[90%] w-px h-2 bg-gray-400"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs mt-1">
+                                        <span class="text-teal-600 font-medium">現在: 78%</span>
+                                        <span class="text-gray-500">目標: 90%</span>
+                                    </div>
                                 </div>
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-400 h-2 rounded-full" style="width: 75%"></div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <div class="flex items-center">
+                                            <span class="font-medium">Region 1</span>
+                                            <span class="ml-2 px-1.5 py-0.5 text-xs rounded bg-red-100 text-red-600">緊急対応</span>
+                                        </div>
                                     </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>Region 1: 75%</span>
+                                    <div class="relative">
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-teal-400 h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <div class="absolute top-0 left-[90%] w-px h-2 bg-gray-400"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs mt-1">
+                                        <span class="text-teal-600 font-medium">現在: 75%</span>
+                                        <span class="text-gray-500">目標: 90%</span>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="mt-3 text-sm space-y-2">
+                                <span class="inline-block px-2 py-1 bg-red-100 text-red-700 rounded">
+                                    必要売上: ¥350K
+                                </span>
+                                <p class="text-red-700 text-xs mt-2">
+                                    ⚠️主要施設でのシェア低下が継続中。早急な対策が必要です。
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Product 4 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Product 4</span>
-                                <span class="text-sm text-gray-500">配分: 15%</span>
+                        <!-- Product 4 (Success Case) -->
+                        <div class="relative p-4 rounded-lg border border-green-100 hover:border-green-200 transition-colors bg-green-50">
+                            <div class="absolute top-3 right-3">
+                                <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700">
+                                    達成目前
+                                </span>
                             </div>
-                            <div class="space-y-2">
+                            <div class="flex justify-between items-start mb-2">
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>全体: 95%</span>
-                                        <span class="text-gray-500">目標: ¥0.6M</span>
-                                    </div>
+                                    <span class="font-medium text-gray-900">Product 4</span>
+                                    <span class="ml-2 text-sm text-gray-500">配分: 15%</span>
                                 </div>
-                                <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-400 h-2 rounded-full" style="width: 93%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>Region 1: 93%</span>
-                                    </div>
+                                <div class="flex items-center">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700">
+                                        目標超過: +5%
+                                    </span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Product 5 -->
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Product 5</span>
-                                <span class="text-sm text-gray-500">配分: 10%</span>
-                            </div>
-                            <div class="space-y-2">
+                            <div class="space-y-3">
                                 <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 88%"></div>
+                                    <div class="relative">
+                                        <div class="w-full bg-gray-200 rounded-full h-2">
+                                            <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
+                                        </div>
+                                        <div class="absolute top-0 left-[90%] w-px h-2 bg-gray-400"></div>
                                     </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>全体: 88%</span>
-                                        <span class="text-gray-500">目標: ¥0.4M</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
-                                        <div class="bg-teal-400 h-2 rounded-full" style="width: 86%"></div>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span>Region 1: 86%</span>
+                                    <div class="flex justify-between text-xs mt-1">
+                                        <span class="text-teal-600 font-medium">現在: 95%</span>
+                                        <span class="text-gray-500">目標: 90%</span>
                                     </div>
                                 </div>
                             </div>
@@ -208,54 +265,82 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Activity Metric Metrics -->
+
+            <!-- Activity Metrics - Improved Version -->
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <div class="flex items-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle text-purple-500 mr-2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </svg>
-                        <h3 class="text-lg font-semibold text-gray-900">Activity Metric評価指標</h3>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity text-purple-500 mr-2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            <h3 class="text-lg font-semibold text-gray-900">Activity Metric評価指標</h3>
+                        </div>
+                        <div class="text-sm font-medium text-teal-600">
+                            総合: 92%
+                        </div>
                     </div>
+
                     <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Activity Metric 1</span>
-                                <span>95%</span>
+                        <!-- KOL面談実施率 -->
+                        <div class="p-4 rounded-lg border border-green-100 hover:border-green-200 transition-colors bg-green-50">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center">
+                                    <span class="font-medium text-gray-900">KOL面談実施率</span>
+                                    <span class="ml-2 px-2 py-1 text-xs rounded-full bg-green-100 text-green-700">達成</span>
+                                </div>
+                                <span class="text-green-600 font-medium">95%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                 <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Activity Metric 2</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-teal-600 h-2 rounded-full" style="width: 88%"></div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>目標: 90%</span>
+                                <span>残り: 2件</span>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Activity Metric 3</span>
-                                <span>90%</span>
+
+                        <!-- 新規施設訪問 -->
+                        <div class="p-4 rounded-lg border border-yellow-100 hover:border-yellow-200 transition-colors bg-yellow-50">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center">
+                                    <span class="font-medium text-gray-900">新規施設訪問</span>
+                                    <span class="ml-2 px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-700">要アクション</span>
+                                </div>
+                                <span class="text-yellow-600 font-medium">85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-teal-600 h-2 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-medium">Activity Metric 4</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
                                 <div class="bg-teal-600 h-2 rounded-full" style="width: 85%"></div>
                             </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>目標: 95%</span>
+                                <span>残り: 5施設</span>
+                            </div>
+                            <div class="mt-2 text-sm">
+                                <span class="text-yellow-700">
+                                    ⚡ 今週中に2施設の訪問を予定してください
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">今週の優先アクション</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-4 h-4 mr-2 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                    </svg>
+                                    新規施設訪問のアポイント取得
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-4 h-4 mr-2 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                    KOL面談レポート提出 (2件)
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -263,7 +348,7 @@
         </div>
 
         <!-- Trend Chart -->
-        <div class="bg-white shadow rounded-lg">
+        <div class="bg-white shadow rounded-lg mb-6">
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex items-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up text-green-500 mr-2">
@@ -277,17 +362,119 @@
                 </div>
             </div>
         </div>
+        <!-- Performance Context & Action Items -->
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <!-- Priority Focus Areas -->
+            <div class="bg-white shadow rounded-lg col-span-2">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">優先アクション</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-red-100">
+                                    <span class="text-red-600 font-medium">1</span>
+                                </span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Product 3 改善計画</h4>
+                                <p class="text-sm text-gray-500 mt-1">現在78% - Region 1での主要施設でのシェア拡大が必要</p>
+                                <div class="mt-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                        最優先
+                                    </span>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 ml-2">
+                                        9月末期限
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="flex-shrink-0">
+                                <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-orange-100">
+                                    <span class="text-orange-600 font-medium">2</span>
+                                </span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900">Activity Metric 4 完了</h4>
+                                <p class="text-sm text-gray-500 mt-1">残りの重要KOL面談を完了させる必要があります</p>
+                                <div class="mt-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                        優先
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">ベストプラクティス</h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <h4 class="text-sm font-medium text-blue-900">Product 4 成功事例</h4>
+                            <p class="text-sm text-blue-600 mt-1">
+                                デジタルエンゲージメントと体系的なフォローアップにより95%以上達成
+                            </p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <h4 class="text-sm font-medium text-green-900">Activity Metric効率化</h4>
+                            <p class="text-sm text-green-600 mt-1">
+                                オンライン面談の活用でKOL面談効率が20%向上
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Milestones -->
+        <div class="bg-white shadow rounded-lg">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900">今後の重要マイルストーン</h3>
+                    <button class="text-sm text-teal-600 hover:text-teal-700">
+                        全て表示
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0 w-16 text-sm text-gray-500">9月25日</div>
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-medium text-gray-900">Q3地域レビュー</h4>
+                            <p class="text-sm text-gray-500">Product 3改善計画の発表</p>
+                        </div>
+                        <span class="flex-shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                            準備中
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex-shrink-0 w-16 text-sm text-gray-500">9月30日</div>
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-medium text-gray-900">Q4目標設定</h4>
+                            <p class="text-sm text-gray-500">Q4KPI確認・合意</p>
+                        </div>
+                        <span class="flex-shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                            予定
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
         // Trend Chart Data
         const monthlyTrend = [
-            { month: '4月', Sales Metric: 82, Activity Metric: 85 },
-            { month: '5月', Sales Metric: 85, Activity Metric: 87 },
-            { month: '6月', Sales Metric: 83, Activity Metric: 88 },
-            { month: '7月', Sales Metric: 87, Activity Metric: 90 },
-            { month: '8月', Sales Metric: 86, Activity Metric: 91 },
-            { month: '9月', Sales Metric: 87, Activity Metric: 92 }
+            { month: '4月', salesMetric: 82, activityMetric: 85 },
+            { month: '5月', salesMetric: 85, activityMetric: 87 },
+            { month: '6月', salesMetric: 83, activityMetric: 88 },
+            { month: '7月', salesMetric: 87, activityMetric: 90 },
+            { month: '8月', salesMetric: 86, activityMetric: 91 },
+            { month: '9月', salesMetric: 87, activityMetric: 92 }
         ];
 
         // Create Chart
@@ -299,15 +486,15 @@
                 datasets: [
                     {
                         label: 'Sales Metric達成率',
-                        data: monthlyTrend.map(item => item.Sales Metric),
-                        borderColor: '#008080', // Teal
+                        data: monthlyTrend.map(item => item.salesMetric),
+                        borderColor: '#008080',
                         backgroundColor: 'transparent',
                         borderWidth: 2
                     },
                     {
                         label: 'Activity Metric達成率',
-                        data: monthlyTrend.map(item => item.Activity Metric),
-                        borderColor: '#36454F', // Charcoal
+                        data: monthlyTrend.map(item => item.activityMetric),
+                        borderColor: '#36454F',
                         backgroundColor: 'transparent',
                         borderWidth: 2
                     }
@@ -325,88 +512,15 @@
                 },
                 plugins: {
                     legend: {
-                        position: 'top',
+                        position: 'top'
                     },
                     tooltip: {
                         mode: 'index',
                         intersect: false
-                    
-            <!-- Comparison Chart -->
-            <div class="bg-white shadow rounded-lg mt-6">
-                <div class="px-4 py-5 sm:p-6">
-                    <div class="flex items-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart text-indigo-500 mr-2">
-                            <line x1="12" y1="18" x2="12" y2="6"></line>
-                            <line x1="18" y1="12" x2="6" y2="12"></line>
-                        </svg>
-                        <h3 class="text-lg font-semibold text-gray-900">MR vs 基準 vs 平均</h3>
-                    </div>
-                    <div class="h-64">
-                        <canvas id="comparisonChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                // Comparison Chart Data
-                const comparisonData = {
-                    labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
-                    datasets: [
-                        {
-                            label: 'MR',
-                            data: [85, 92, 78, 95, 88],
-                            backgroundColor: '#008080',
-                            borderColor: '#008080',
-                            borderWidth: 2
-                        },
-                        {
-                            label: '基準',
-                            data: [80, 80, 80, 80, 80],
-                            backgroundColor: '#36454F',
-                            borderColor: '#36454F',
-                            borderWidth: 2
-                        },
-                        {
-                            label: '平均',
-                            data: [90, 90, 90, 90, 90],
-                            backgroundColor: '#6200EE',
-                            borderColor: '#6200EE',
-                            borderWidth: 2
-                        }
-                    ]
-                };
-
-                // Create Comparison Chart
-                const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
-                new Chart(comparisonCtx, {
-                    type: 'bar',
-                    data: comparisonData,
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            x: {
-                                grid: {
-                                    display: false
-                                }
-                            },
-                            y: {
-                                beginAtZero: false,
-                                min: 60,
-                                max: 100
-                            }
-                        },
-                        plugins: {
-                            legend: {
-                                position: 'top'
-                            },
-                            tooltip: {
-                                mode: 'index',
-                                intersect: false
-                            }
-                        }
                     }
-                });
-            </script>
-        </body>
-    </html>
+                }
+            }
+        });
+    </script>
+</body>
+</html>

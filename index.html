@@ -39,7 +39,7 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <p class="text-lg font-semibold mb-2">PPO達成率 (70%)</p>
+                        <p class="text-lg font-semibold mb-2">Sales Metric達成率 (70%)</p>
                         <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
                             <div class="bg-teal-600 h-4 rounded-full" style="width: 87%"></div>
                         </div>
@@ -212,12 +212,12 @@
     <script>
         // Trend Chart Data
         const monthlyTrend = [
-            { month: '4月', ppo: 82, Activity Metric: 85 },
-            { month: '5月', ppo: 85, Activity Metric: 87 },
-            { month: '6月', ppo: 83, Activity Metric: 88 },
-            { month: '7月', ppo: 87, Activity Metric: 90 },
-            { month: '8月', ppo: 86, Activity Metric: 91 },
-            { month: '9月', ppo: 87, Activity Metric: 92 }
+            { month: '4月', Sales Metric: 82, Activity Metric: 85 },
+            { month: '5月', Sales Metric: 85, Activity Metric: 87 },
+            { month: '6月', Sales Metric: 83, Activity Metric: 88 },
+            { month: '7月', Sales Metric: 87, Activity Metric: 90 },
+            { month: '8月', Sales Metric: 86, Activity Metric: 91 },
+            { month: '9月', Sales Metric: 87, Activity Metric: 92 }
         ];
 
         // Create Chart
@@ -228,8 +228,8 @@
                 labels: monthlyTrend.map(item => item.month),
                 datasets: [
                     {
-                        label: 'PPO達成率',
-                        data: monthlyTrend.map(item => item.ppo),
+                        label: 'Sales Metric達成率',
+                        data: monthlyTrend.map(item => item.Sales Metric),
                         borderColor: '#008080', // Teal
                         backgroundColor: 'transparent',
                         borderWidth: 2
